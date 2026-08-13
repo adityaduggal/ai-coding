@@ -1,0 +1,14 @@
+{
+  "name": "ai-coding",
+  "private": true,
+  "description": "Claude Code agents and skills toolkit for building custom Frappe apps",
+  "scripts": {
+    "lint:md": "markdownlint-cli2 \".claude/agents/**/*.md\" \".claude/skills/**/SKILL.md\"",
+    "lint:frontmatter": "node scripts/validate-frontmatter.mjs",
+    "lint:json": "node scripts/lint-json.mjs",
+    "lint": "npm run lint:md && npm run lint:frontmatter && npm run lint:json"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.14.0"
+  }
+}

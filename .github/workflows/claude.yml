@@ -1,0 +1,36 @@
+name: Claude Assistant
+
+# Requires a repo secret named ANTHROPIC_API_KEY (Settings > Secrets and
+# variables > Actions > New repository secret). This workflow does not
+# create that secret for you.
+#
+# Claude runs here with this repo's .claude/agents/ (engineering/, testing/)
+# and .claude/skills/ (frappe-*) checked out, so the full agent and Frappe
+# skill roster is available when responding to @claude mentions.
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  issues:
+    types: [opened]
+
+jobs:
+  claude-response:
+    if: |
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'issues' && contains(github.event.issue.body, '@claude'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
