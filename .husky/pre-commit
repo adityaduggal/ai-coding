@@ -1,0 +1,10 @@
+if ! command -v npm >/dev/null 2>&1; then
+  for candidate in "/c/Program Files/nodejs" "/c/Program Files (x86)/nodejs"; do
+    if [ -x "$candidate/npm.cmd" ] || [ -x "$candidate/npm" ]; then
+      export PATH="$candidate:$PATH"
+      break
+    fi
+  done
+fi
+
+npm run lint

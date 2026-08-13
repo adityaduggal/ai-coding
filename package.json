@@ -6,9 +6,11 @@
     "lint:md": "markdownlint-cli2 \".claude/agents/**/*.md\" \".claude/skills/**/SKILL.md\"",
     "lint:frontmatter": "node scripts/validate-frontmatter.mjs",
     "lint:json": "node scripts/lint-json.mjs",
-    "lint": "npm run lint:md && npm run lint:frontmatter && npm run lint:json"
+    "lint": "npm run lint:md && npm run lint:frontmatter && npm run lint:json",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "markdownlint-cli2": "^0.14.0"
   }
 }

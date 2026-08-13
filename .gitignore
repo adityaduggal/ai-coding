@@ -1,2 +1,10 @@
 node_modules/
 .claude/scheduled_tasks.lock
+
+# OS cruft
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# npm
+npm-debug.log*
