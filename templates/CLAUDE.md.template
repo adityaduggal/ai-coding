@@ -1,0 +1,18 @@
+# CLAUDE.md
+
+<!-- Copy into a new project's root and trim to fit. -->
+
+## What this project is
+
+<!-- One or two sentences: what it does, who it's for. -->
+
+## Conventions
+
+- <!-- language/framework, test command, lint command -->
+- <!-- commit message style -->
+- <!-- anything the agent should never touch (generated files, vendored code) -->
+
+## Token-saving rules
+
+See ai-coding/rules/token-savings.md for the shared baseline. Add
+project-specific additions here only if they diverge from the baseline.
