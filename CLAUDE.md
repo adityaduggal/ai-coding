@@ -24,3 +24,9 @@ Rules for working in this repo (ai-coding).
 - Batch independent tool calls in parallel instead of serial round-trips.
 
 Full detail: see `rules/token-savings.md`.
+
+## CLAUDE.md itself
+
+- 80-line hard cap, enforced by `scripts/claude-md-lint.py` in CI. Pointers
+  only — never paste rule bodies in here. See
+  `standards/CLAUDE-MD-STANDARD.md`.
